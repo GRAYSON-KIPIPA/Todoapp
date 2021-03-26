@@ -32,15 +32,16 @@ app.get('/', (req, res) => {
   
     res.send(`Full name is:${req.body.fname} ${req.body.lname}.`);
   });
+
+  app.use('/public', express.static(__dirname+ '/public'))
   
-  
 
   
 
 
 
 
-
+  
 
 
 
