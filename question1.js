@@ -1,7 +1,9 @@
-const http = require('http');
+// const http = require('http');
 
 const express = require('express');
 const app = express();
+
+const bodyParser = require('body-parser');
 
 
 //This session solve the first task
@@ -19,10 +21,43 @@ app.get('/', (req, res) => {
 
 
   //This session solve the second task to display hello world
-  app.get('/udsm', (req, res) => {
+  app.get('/hello', (req, res) => {
     res.send('<h1>Hello World<h1/>');
     res.end();
   })
+
+  app.use(bodyParser.urlencoded({ extended: true }));
+
+  app.post('/form', (req, res) => {
+  
+    res.send(`Full name is:${req.body.fname} ${req.body.lname}.`);
+  });
+  
+  
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
    //This code allow browser to listen to the specified port number
 app.listen(3000, 'localhost', ()=>{
