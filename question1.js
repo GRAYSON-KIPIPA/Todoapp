@@ -33,7 +33,17 @@ app.get('/', (req, res) => {
     res.send(`Full name is:${req.body.fname} ${req.body.lname}.`);
   });
 
+  app.post('/login1', (req,res) =>{
+    res.send(`The login details are: ${req.body.ename} ${req.body.pname}.`);
+  })
+
+  app.post('/signUp1', (req,res) =>{
+    res.send(`The login details are: ${req.body.uname} ${req.body.emname} ${req.body.phname} ${req.body.passname}.`);
+  })
+
   app.use('/public', express.static(__dirname+ '/public'))
+
+
   
 
   
