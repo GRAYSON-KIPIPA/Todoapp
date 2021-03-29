@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TODO APP | Sign UP</title>
+    <link rel="stylesheet" href="../login.css">
+</head>
+
+<body>
+    <h2>CREATE YOUR ACCOUNT HERE</h2>
+    <form id='signupform' class="form">
+        <input class="location1" type="text" name="username" placeholder="Enter your user name">
+        <input class="location1" type="email" name="email" placeholder="Enter your user Email">
+        <input class="location1" type="tel" name="phonenumber" placeholder="Enter your phone Number">
+        <input class="location1" type="password" name="password" id="" placeholder="Enter your password">
+        <input class="location3" value="SIGN UP" type="submit">
+
+        <a class="sign" style="display: inline;" href='login1.html'>Already have an account?</a>
+    </form>
+
+    <script>
+        const signupform = document.getElementById('signupform')
+        signupform.addEventListener('submit', (e) => {
+            e.preventDefault()
+            const data = {
+                username: e.target.elements.username.value,
+                email: e.target.elements.email.value,
+                phonenumber: e.target.elements.phonenumber.value,
+                password: e.target.elements.password.value
+            }
+
+            console.log('hi there')
+            fetch('http://localhost:3000/signup', {
+                method: 'POST',
+                headers: {
+                    'Accept': 'application/json',
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(data),
+            })
+                .then(response => response.json())
+                .then(data => {
+                    console.log(data)
+                    alert(JSON.stringify(data))
+                })
+                .catch(err => {
+                    console.log(err)
+                    alert('error')
+                })
+        })
+    </script>
+</body>
+</html>
