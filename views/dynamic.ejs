@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link href="dynamic.css" rel="stylesheet" type="text/css">
+</head>
+
+<body>
+
+    <!-- This is my code i tried so solve the given task -->
+             
+    <button class="button1" onclick="increase();"><b></b>INCREMENT</button>
+    <button class="button2" onclick="decrease();">DECREMENT</button>
+    <input class="p" type="number" id="incre" value="0">
+   
+
+         <script>
+            //  var i = 0;
+            let take = document.getElementById('incre').value;
+            // console.log(take);
+             // var sum = num + 4;
+            // console.log(sum);
+            
+            var num = parseInt(take);
+            function increase(){
+                num++;
+                document.getElementById('incre').value=num;
+            }
+
+            function decrease(){
+                num--;
+                document.getElementById('incre').value=num;
+            }
+           
+         </script>
+     
+
+</body>
+
+</html>
